@@ -25,6 +25,8 @@ fn main() {
     println!("user type: {}, cope_user: {}", user_type, copy_user);
     // 字符串类型
     use_string();
+    // 切片
+    struct_fn();
 }
 
 
@@ -83,7 +85,34 @@ fn loop_fn() {
 
 // string
 fn use_string() {
-    let mut info = String::from("这是一串字符串");
+    // 将&str转为String类型
+    let mut info = String::from("asdljapiowernpsn");
     info.push_str("王思聪");
     println!("使用字符串: {}", info);
+    // 切片
+    let splice1 = &info[0..4];
+    // 将String转为&str
+    let splice2 = &info[..];
+    println!("切片类型splice1:{}, string:{}", splice1, splice2);
+    // &str类型操作
+}
+
+// 结构体
+fn struct_fn() {
+    #[derive(Debug)]
+    struct User {
+        name: String,
+        password: String,
+        age: i32,
+        hobys: [i32; 5],
+    }
+
+    let user = User {
+        name: String::from("王思聪"),
+        password: String::from("2esasdf"),
+        age: 18,
+        hobys: [1, 24, 56, 7, 8],
+    };
+
+    println!("user info is: {:?}", user);
 }

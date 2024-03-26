@@ -6,6 +6,13 @@ fn main() {
     user_name = "王思聪";
     // 打印出名字
     println!("user_name: {}", user_name);
+    // string split to collect
+    let text = String::from("apple,banana,cherry");
+    let fruits: Vec<&str> = text.split("banana").collect();
+    println!("{:?}", fruits);
+    // vec
+    let vec_name = vec!["apple", "banana"];
+    println!("first is:{}", vec_name[0]);
 }
 
 
